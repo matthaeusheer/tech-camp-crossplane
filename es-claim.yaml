@@ -1,9 +1,0 @@
-apiVersion: example.com/v1
-kind: ExternalSecretClaim
-metadata:
-  name: my-external-secret
-  namespace: my-app-namespace
-spec:
-  namespace: my-app-namespace
-  secretName: my-app-secret
-  vaultSecretPath: secret/data/myapp/namespace1
