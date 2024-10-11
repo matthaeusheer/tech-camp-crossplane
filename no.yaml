@@ -27,6 +27,8 @@ kind: SecretStore
 metadata:
   name: local-vault
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 spec:
   provider:
     vault:
@@ -52,6 +54,8 @@ kind: ExternalSecret
 metadata:
   name: my-external-secret  # Name of the ExternalSecret
   namespace: default        # Target namespace for the secret
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   secretStoreRef:
     name: local-vault       # Reference to the SecretStore defined earlier
