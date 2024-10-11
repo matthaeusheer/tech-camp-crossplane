@@ -16,7 +16,7 @@ spec:
             chart:
               name: external-secrets
               repository: https://charts.external-secrets.io
-            namespace: {{ .spec.namespace }}
+            namespace: "external-secrets"
             values:
               installCRDs: true
               replicaCount: 1
