@@ -1,0 +1,24 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: externalsecretoperatorcomposition.example.com
+spec:
+  compositeTypeRef:
+    apiVersion: example.com/v1
+    kind: ExternalSecretOperatorResource
+  resources:
+    - name: externalsecretoperator
+      base:
+        apiVersion: helm.crossplane.io/v1beta1
+        kind: Release
+        spec:
+          forProvider:
+            chart:
+              name: external-secrets
+              repository: https://charts.external-secrets.io
+            namespace: {{ .spec.namespace }}
+            values:
+              installCRDs: true
+              replicaCount: 1
+          providerConfigRef:
+            name: helm-provider

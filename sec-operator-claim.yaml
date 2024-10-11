@@ -1,0 +1,8 @@
+apiVersion: example.com/v1
+kind: ExternalSecretOperatorClaim
+metadata:
+  name: external-secret-operator
+  namespace: external-secrets
+spec:
+  namespace: external-secrets
+  version: "0.8.0"  # Specify the version you want to deploy

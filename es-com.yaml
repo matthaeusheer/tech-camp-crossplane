@@ -1,0 +1,27 @@
+
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: secretstorecomposition.example.com
+spec:
+  compositeTypeRef:
+    apiVersion: example.com/v1
+    kind: SecretStoreResource
+  resources:
+    - name: secretstore
+      base:
+        apiVersion: external-secrets.io/v1alpha1
+        kind: SecretStore
+        spec:
+          provider:
+            vault:
+              server: {{ .spec.vaultServer }}
+              path: secret/data
+              version: v2
+              auth:
+                tokenSecretRef:
+                  name: {{ .spec.vaultTokenSecretName }}
+                  key: {{ .spec.vaultTokenSecretKey }}
+      patches:
+        - fromFieldPath: "spec.namespace"
+          toFieldPath: "metadata.namespace"

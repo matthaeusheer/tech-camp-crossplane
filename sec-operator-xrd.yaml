@@ -1,0 +1,25 @@
+
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: externalsecretoperators.example.com
+spec:
+  group: example.com
+  names:
+    kind: ExternalSecretOperatorResource
+    plural: externalsecretoperators
+  claimNames:
+    kind: ExternalSecretOperatorClaim
+    plural: externalsecretoperatorclaims
+  versions:
+    - name: v1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            namespace:
+              type: string
+            version:
+              type: string
