@@ -14,13 +14,13 @@ spec:
         spec:
           provider:
             vault:
-              server: ""
+              server: "http://vault.vault.svc.cluster.local:8200"
               path: secret/data
               version: v2
               auth:
                 tokenSecretRef:
-                  name:  ""
-                  key: ""
+                  name:  "vault-token"
+                  key: "token"
       patches:
         - fromFieldPath: "spec.namespace"
           toFieldPath: "metadata.namespace"

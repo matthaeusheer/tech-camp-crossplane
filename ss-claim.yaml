@@ -5,6 +5,3 @@ metadata:
   namespace: external-secrets
 spec:
   namespace: external-secrets
-  vaultServer: http://vault.vault.svc.cluster.local:8200
-  vaultTokenSecretName: vault-token
-  vaultTokenSecretKey: token

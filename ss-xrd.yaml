@@ -20,9 +20,3 @@ spec:
           properties:
             namespace:
               type: string
-            vaultServer:
-              type: string
-            vaultTokenSecretName:
-              type: string
-            vaultTokenSecretKey:
-              type: string
