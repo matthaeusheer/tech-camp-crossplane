@@ -1,0 +1,26 @@
+
+apiVersion: apiextensions.crossplane.io/v1
+kind: Composition
+metadata:
+  name: externalsecretcomposition
+  labels:
+    guide: "true"
+spec:
+  compositeTypeRef:
+    apiVersion: mysecrets.example.org/v1alpha1
+    kind: CompositeExternalSecret
+  resources:
+    - name: externalSecret
+      base:
+        apiVersion: external-secrets.io/v1beta1
+        kind: ExternalSecret
+        spec:
+          backendType: vault
+          vault:
+            server: vault-server.default.svc.cluster.local  # Replace with your Vault server address
+            path: ""
+            # Here, `data` is populated from the spec in the claim
+            data:
+              - key: ${ .spec.vault.key }  # This uses the key provided in the claim
+                name: secret-name
+                property: value
