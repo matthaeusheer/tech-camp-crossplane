@@ -1,4 +1,3 @@
-
 apiVersion: apiextensions.crossplane.io/v1
 kind: Composition
 metadata:
@@ -15,12 +14,7 @@ spec:
         apiVersion: external-secrets.io/v1beta1
         kind: ExternalSecret
         spec:
-          backendType: vault
-          vault:
-            server: vault-server.default.svc.cluster.local  # Replace with your Vault server address
-            path: ""
-            # Here, `data` is populated from the spec in the claim
-            data:
-              - key: "" 
-                name: secret-name
-                property: value
+        # SecretStoreRef defines which SecretStore to use when fetching the secret data
+        secretStoreRef:
+          name: secret-store-name
+          kind: SecretStore  
