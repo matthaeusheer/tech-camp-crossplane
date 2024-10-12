@@ -20,5 +20,3 @@ spec:
           properties:
             namespace:
               type: string
-            version:
-              type: string

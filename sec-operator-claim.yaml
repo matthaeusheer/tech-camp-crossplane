@@ -3,3 +3,5 @@ kind: ExternalSecretOperatorClaim
 metadata:
   name: external-secret-operator
   namespace: external-secrets
+spec:
+  namespace: external-secrets
