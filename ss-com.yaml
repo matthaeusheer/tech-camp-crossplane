@@ -10,11 +10,13 @@ spec:
     - name: secretstore
       base:
         apiVersion: external-secrets.io/v1alpha1
-        kind: ClusterSecretStore
+        kind: SecretStore
+        metadata:
+          namespace: external-secrets
         spec:
           provider:
             vault:
-              server:  "http://vault.default.svc:8200"
+              server: "http://vault.default.svc:8200"
               path: secret/data
               version: v2
               auth:
