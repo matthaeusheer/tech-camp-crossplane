@@ -1,7 +1,7 @@
 apiVersion: azure.upbound.io/v1beta1
 kind: ResourceGroup
 metadata:
-  name: rg-crossplane-demo
+  name: rg-crossplane-demo-part1
 spec:
   forProvider:
     location: WestEurope
