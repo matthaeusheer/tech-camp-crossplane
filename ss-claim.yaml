@@ -2,6 +2,5 @@ apiVersion: example.com/v1
 kind: SecretStoreClaim
 metadata:
   name: my-secret-store
-  namespace: external-secrets
 spec:
   namespace: external-secrets
