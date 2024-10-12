@@ -10,7 +10,7 @@ spec:
     - name: secretstore
       base:
         apiVersion: external-secrets.io/v1alpha1
-        kind: SecretStore
+        kind: ClusterSecretStore
         spec:
           provider:
             vault:
@@ -20,6 +20,7 @@ spec:
               auth:
                 tokenSecretRef:
                   name:  "vault-token"
+                  namespace: default
                   key: "token"
       patches:
         - fromFieldPath: "spec.namespace"
