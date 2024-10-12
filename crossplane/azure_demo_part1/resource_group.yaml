@@ -1,0 +1,19 @@
+apiVersion: azure.upbound.io/v1beta1
+kind: ResourceGroup
+metadata:
+  name: rg-crossplane-demo
+spec:
+  forProvider:
+    location: WestEurope
+    tags:
+      expireOn: 2024-12-12
+      owner: "mhr@ipt.ch"
+      SecfixContainsEPHI: "false"
+      SecfixContainsUserData: "false"
+      SecfixDescription: "TechCamp"
+      SecfixNoAlert: "Only for testing"
+      SecfixNonProd: "true"
+      SecfixOwner: "mhr@ipt.ch"
+      SecfixUserDataStored: "n/a"
+  providerConfigRef:
+    name: azure-provider-config
