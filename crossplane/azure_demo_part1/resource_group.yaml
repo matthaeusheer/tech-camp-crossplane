@@ -15,5 +15,6 @@ spec:
       SecfixNonProd: "true"
       SecfixOwner: "mhr@ipt.ch"
       SecfixUserDataStored: "n/a"
+      newTag: "hi"
   providerConfigRef:
     name: azure-provider-config
