@@ -4,8 +4,7 @@ metadata:
   name: my-external-secret-claim-a
   namespace: namespace-a  # Change this to your desired namespace
 spec:
-  providerConfigRef:
-    name: helm-provider  # Reference to your ProviderConfig
+  providerConfigRef: helm-provider  # Reference to your ProviderConfig as a string
   vault:
     path: secret/data/my-secret-a  # Path to your secret in Vault
     key: my-secret-key-a  # Key within the secret

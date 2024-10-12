@@ -21,6 +21,6 @@ spec:
             path: ""
             # Here, `data` is populated from the spec in the claim
             data:
-              - key: ${ .spec.vault.key }  # This uses the key provided in the claim
+              - key: "" 
                 name: secret-name
                 property: value
